@@ -1,0 +1,13 @@
+# Binaries & Executables
+custom_linked_list
+recursion_problems
+*.o
+*.out
+*.exe
+
+# macOS
+.DS_Store
+
+# Python Cache
+__pycache__/
+*.pyc
