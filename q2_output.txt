@@ -1,0 +1,39 @@
+======================================================================
+ MIVA OPEN UNIVERSITY | CSC 301: DATA STRUCTURES TMA
+ Candidate: Richard John (Matric: 2024/C/DSC/0548)
+ Question 2: Solving Problems Using Recursion
+======================================================================
+
+>>> 1. FACTORIAL TESTS (Base Case: n <= 1 -> 1 | Recursive: n * f(n-1))
+----------------------------------------------------------------------
+Test 1 [Edge Case: 0!]:        1 (Expected: 1)
+Test 2 [Standard: 5!]:         120 (Expected: 120)
+Test 3 [Large Value: 10!]:     3628800 (Expected: 3628800)
+Test 4 [Negative Input: -4!]:  [ERROR] Factorial is undefined for negative integers (-4). -1 (Error Handled)
+
+>>> 2. FIBONACCI SEQUENCE TESTS (Base: n<=0->0, n=1->1 | Rec: f(n-1)+f(n-2))
+----------------------------------------------------------------------
+Test 1 [Single term (n=1)]:    First 1 terms: 0
+Test 2 [Standard (n=7)]:       First 7 terms: 0, 1, 1, 2, 3, 5, 8
+Test 3 [Extended (n=12)]:      First 12 terms: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89
+Test 4 [Invalid (n=0)]:        [ERROR] Number of terms must be greater than 0.
+
+>>> 3. STRING REVERSAL TESTS (Base: len<=1 -> str | Rec: rev(sub)+first)
+----------------------------------------------------------------------
+Test 1 [Empty String ""]:       "" (Length: 0)
+Test 2 [Palindrome "racecar"]:  "racecar"
+Test 3 [Phrase "Data Structures"]: "serutcurtS ataD"
+Test 4 [Phrase "Miva Open University"]: "ytisrevinU nepO aviM"
+
+>>> 4. RECURSIVE BINARY SEARCH TESTS
+----------------------------------------------------------------------
+Sorted Array: [ 4, 11, 19, 28, 35, 42, 58, 67, 73, 89, 95 ]
+Test 1 [Find 42]:  Found at index 5 (Value: 42)
+Test 2a [Find first 4]: Found at index 0
+Test 2b [Find last 95]:  Found at index 10
+Test 3 [Search non-existent 50]: Result = -1 (Correctly reported as NOT FOUND)
+Test 4 [Search in Empty Array]:    Result = -1 (Handled safely without segmentation fault)
+
+======================================================================
+ [ALL RECURSION TESTS COMPLETED SUCCESSFULLY]
+======================================================================

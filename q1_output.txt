@@ -1,0 +1,70 @@
+======================================================================
+ MIVA OPEN UNIVERSITY | CSC 301: DATA STRUCTURES TMA
+ Candidate: Richard John (Matric: 2024/C/DSC/0548)
+ Question 1: Custom Singly Linked List Verification
+======================================================================
+
+>>> TEST SET 1: Standard Insertions and Deletions
+----------------------------------------------------------------------
+List: [ EMPTY ] (Size: 0)
+[SUCCESS] Inserted 30 at the beginning.
+[SUCCESS] Inserted 10 at the beginning.
+[SUCCESS] Inserted 50 at the end.
+List: [ 10 -> 30 -> 50 -> NULL ] (Size: 3)
+[SUCCESS] Inserted 20 at position 2.
+List: [ 10 -> 20 -> 30 -> 50 -> NULL ] (Size: 4)
+[SUCCESS] Inserted 40 at position 4.
+List: [ 10 -> 20 -> 30 -> 40 -> 50 -> NULL ] (Size: 5)
+
+-- Performing Deletions on Test Set 1 --
+[SUCCESS] Deleted node with value 30.
+List: [ 10 -> 20 -> 40 -> 50 -> NULL ] (Size: 4)
+[SUCCESS] Deleted node at position 1 (value: 10).
+List: [ 20 -> 40 -> 50 -> NULL ] (Size: 3)
+[SUCCESS] Deleted node at position 3 (value: 50).
+List: [ 20 -> 40 -> NULL ] (Size: 2)
+
+>>> TEST SET 2: Edge Cases and Defensive Error Handling
+----------------------------------------------------------------------
+[INFO] List cleared for edge case validation.
+List: [ EMPTY ] (Size: 0)
+
+Attempting deletion on empty list:
+[ERROR] Cannot delete from an empty list.
+[ERROR] Cannot delete from an empty list.
+
+Attempting out-of-bounds insertions:
+[ERROR] Invalid position 0. Valid range is 1 to 1.
+[ERROR] Invalid position 5. Valid range is 1 to 1.
+
+Operating on a single-element list:
+[SUCCESS] Inserted 77 at the beginning.
+List: [ 77 -> NULL ] (Size: 1)
+[ERROR] Value 999 not found in the list.
+[SUCCESS] Deleted node at position 1 (value: 77).
+List: [ EMPTY ] (Size: 0)
+
+>>> TEST SET 3: Practical Batch Processing (Student ID Records)
+----------------------------------------------------------------------
+[SUCCESS] Inserted 101 at the end.
+[SUCCESS] Inserted 102 at the end.
+[SUCCESS] Inserted 104 at the end.
+[SUCCESS] Inserted 105 at the end.
+List: [ 101 -> 102 -> 104 -> 105 -> NULL ] (Size: 4)
+
+Inserting missing student ID 103 at position 3:
+[SUCCESS] Inserted 103 at position 3.
+List: [ 101 -> 102 -> 103 -> 104 -> 105 -> NULL ] (Size: 5)
+
+Inserting transfer student ID 100 at beginning:
+[SUCCESS] Inserted 100 at the beginning.
+List: [ 100 -> 101 -> 102 -> 103 -> 104 -> 105 -> NULL ] (Size: 6)
+
+Removing withdrawn student ID 104 by value:
+[SUCCESS] Deleted node with value 104.
+List: [ 100 -> 101 -> 102 -> 103 -> 105 -> NULL ] (Size: 5)
+
+Clearing all remaining records:
+List: [ EMPTY ] (Size: 0)
+
+[ALL TESTS COMPLETED SUCCESSFULLY]
