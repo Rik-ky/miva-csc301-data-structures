@@ -17,8 +17,8 @@ This repository contains the complete C++ implementations, test harnesses, and e
 A custom object-oriented singly linked list implemented in C++ without external container libraries:
 - **Node Structure:** Integer payload and raw forward pointer (`Node* next`).
 - **Insertion Operations:**
-  - `insertAtBeginning(int value)`: $O(1)$ prepend operation.
-  - `insertAtEnd(int value)`: $O(n)$ append operation.
+  - `insertAtBeginning(int value)`: `O(1)` prepend operation.
+  - `insertAtEnd(int value)`: `O(n)` append operation.
   - `insertAtPosition(int value, int position)`: 1-based index insertion with boundary checks.
 - **Deletion Operations:**
   - `deleteByValue(int value)`: Searches and deletes target node, handling head, intermediate, and non-existent values.
@@ -34,11 +34,11 @@ A custom object-oriented singly linked list implemented in C++ without external 
 
 ### Question 2: Solving Problems Using Recursion
 Four classic computational problems implemented using recursion in C++:
-1. **Factorial Calculation:** Recursive implementation ($n!$) with base case $n \le 1 \to 1$, negative input validation, and 64-bit integer support.
-2. **Fibonacci Sequence:** Recursive generation of the first $n$ terms with base cases $n \le 0 \to 0$ and $n = 1 \to 1$.
-3. **String Reversal:** Recursive string reversal using substring decomposition with base case $\text{length} \le 1$.
+1. **Factorial Calculation:** Recursive implementation (`n!`) with base case `n <= 1` returning `1`, negative input validation, and 64-bit integer support.
+2. **Fibonacci Sequence:** Recursive generation of the first `n` terms with base cases `n <= 0 -> 0` and `n == 1 -> 1`.
+3. **String Reversal:** Recursive string reversal using substring decomposition with base case `length <= 1`.
 4. **Recursive Binary Search:** Divide-and-conquer search on sorted arrays featuring overflow-safe midpoint calculation (`low + (high - low) / 2`) and base cases for element found and subarray exhaustion.
-- **Test Cases:** Evaluated against 3+ distinct inputs per function plus boundary edge cases ($0!$, negative inputs, empty strings, palindromes, search on empty arrays, missing elements).
+- **Test Cases:** Evaluated against 3+ distinct inputs per function plus boundary edge cases (`0!`, negative inputs, empty strings, palindromes, search on empty arrays, missing elements).
 
 ---
 

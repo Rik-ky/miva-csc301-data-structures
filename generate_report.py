@@ -212,7 +212,7 @@ def generate_csc301_report():
     story.append(Paragraph(q1_desc, body))
     story.append(Spacer(1, 4))
 
-    story.append(Paragraph("Memory Management Analysis (100–150 words):", title_h2))
+    story.append(Paragraph("Memory Management Analysis:", title_h2))
 
     memory_explanation = (
         "In a C++ singly linked list, memory is dynamically partitioned between the heap and the call stack. "
@@ -222,7 +222,7 @@ def generate_csc301_report():
         "Unlike contiguous arrays, linked list nodes reside at non-contiguous heap addresses, interconnected solely by forward pointers. "
         "During deletion, target nodes are unlinked by updating the preceding node's <code>next</code> pointer, and their heap memory is "
         "explicitly freed using <code>delete</code> to prevent memory leaks and dangling pointers. "
-        "Finally, the class destructor iterates through all remaining nodes, deallocating each sequentially in $O(n)$ time to ensure "
+        "Finally, the class destructor iterates through all remaining nodes, deallocating each sequentially in O(n) time to ensure "
         "complete resource reclamation."
     )
     story.append(Paragraph(memory_explanation, body))
@@ -448,10 +448,10 @@ public:
 
     cases_data = [
         [Paragraph("Function", tbl_header), Paragraph("Base Case", tbl_header), Paragraph("Recursive Case", tbl_header), Paragraph("Time / Space Complexity", tbl_header)],
-        [Paragraph("Factorial", tbl_cell), Paragraph("<code>n <= 1</code>: returns 1", tbl_cell), Paragraph("<code>n * factorial(n - 1)</code>", tbl_cell), Paragraph("Time: $O(n)$<br/>Space: $O(n)$ stack", tbl_cell)],
-        [Paragraph("Fibonacci", tbl_cell), Paragraph("<code>n <= 0</code>: 0<br/><code>n == 1</code>: 1", tbl_cell), Paragraph("<code>fib(n - 1) + fib(n - 2)</code>", tbl_cell), Paragraph("Time: $O(2^n)$<br/>Space: $O(n)$ stack", tbl_cell)],
-        [Paragraph("String Reversal", tbl_cell), Paragraph("<code>str.length() <= 1</code>:<br/>return str", tbl_cell), Paragraph("<code>reverse(str.substr(1)) + str[0]</code>", tbl_cell), Paragraph("Time: $O(n^2)$ (substr)<br/>Space: $O(n)$ stack", tbl_cell)],
-        [Paragraph("Binary Search", tbl_cell), Paragraph("<code>low > high</code>: -1<br/><code>arr[mid] == key</code>: mid", tbl_cell), Paragraph("<code>key < arr[mid]</code>: left<br/><code>key > arr[mid]</code>: right", tbl_cell), Paragraph("Time: $O(\\log n)$<br/>Space: $O(\\log n)$ stack", tbl_cell)],
+        [Paragraph("Factorial", tbl_cell), Paragraph("<code>n &lt;= 1</code>: returns 1", tbl_cell), Paragraph("<code>n * factorial(n - 1)</code>", tbl_cell), Paragraph("Time: O(n)<br/>Space: O(n) stack", tbl_cell)],
+        [Paragraph("Fibonacci", tbl_cell), Paragraph("<code>n &lt;= 0</code>: 0<br/><code>n == 1</code>: 1", tbl_cell), Paragraph("<code>fib(n - 1) + fib(n - 2)</code>", tbl_cell), Paragraph("Time: O(2<sup>n</sup>)<br/>Space: O(n) stack", tbl_cell)],
+        [Paragraph("String Reversal", tbl_cell), Paragraph("<code>str.length() &lt;= 1</code>:<br/>return str", tbl_cell), Paragraph("<code>reverse(str.substr(1)) + str[0]</code>", tbl_cell), Paragraph("Time: O(n<sup>2</sup>) (substr)<br/>Space: O(n) stack", tbl_cell)],
+        [Paragraph("Binary Search", tbl_cell), Paragraph("<code>low &gt; high</code>: -1<br/><code>arr[mid] == key</code>: mid", tbl_cell), Paragraph("<code>key &lt; arr[mid]</code>: left<br/><code>key &gt; arr[mid]</code>: right", tbl_cell), Paragraph("Time: O(log n)<br/>Space: O(log n) stack", tbl_cell)],
     ]
     t_cases = Table(cases_data, colWidths=[1.3*72, 1.8*72, 2.3*72, 1.8*72])
     t_cases.setStyle(TableStyle([
@@ -466,15 +466,15 @@ public:
     story.append(t_cases)
     story.append(Spacer(1, 8))
 
-    story.append(Paragraph("Recursion vs. Iteration Comparative Summary (150–200 words):", title_h2))
+    story.append(Paragraph("Recursion vs. Iteration Comparative Summary:", title_h2))
 
     recursion_summary = (
         "Recursion and iteration are fundamental computational approaches for repetitive problem solving. "
         "In recursion, a function calls itself to resolve progressively smaller sub-problems until reaching a terminating base case. "
         "Each recursive invocation pushes an activation record onto the call stack, allocating memory for parameters, local variables, "
-        "and return addresses. Consequently, recursion incurs $O(n)$ auxiliary stack space, runtime function-call overhead, "
+        "and return addresses. Consequently, recursion incurs O(n) auxiliary stack space, runtime function-call overhead, "
         "and vulnerability to stack overflow if recursion depth is unbounded. "
-        "Conversely, iteration relies on looping constructs managed by loop variables residing in constant stack space ($O(1)$ memory), "
+        "Conversely, iteration relies on looping constructs managed by loop variables residing in constant stack space (O(1) memory), "
         "providing superior execution speed and cache locality. "
         "However, recursion is strongly preferred in problems with self-similar, branching, or divide-and-conquer structures where "
         "iterative equivalents require complex manual stack management. "
